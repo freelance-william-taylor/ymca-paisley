@@ -1,0 +1,22 @@
+{
+  "name": "ymca-paisley",
+  "version": "1.0.0",
+  "description": "Professional website for the Paisley YMCA organisation.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/full-stack-dev/ymca-paisley.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/full-stack-dev/ymca-paisley/issues"
+  },
+  "homepage": "https://github.com/full-stack-dev/ymca-paisley#readme",
+  "dependencies": {
+    "bulma": "^0.4.2"
+  }
+}
