@@ -1,0 +1,59 @@
+
+#map {
+    height: 500px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.nav {
+    height: 5.0rem;
+    background: white;
+    box-shadow: 0px 0px 5px #333;
+    margin-bottom:0px;
+}
+
+.nav-item img {
+    max-height: 5.0rem;
+}
+
+.nav-item a, a.nav-item {
+    color:#333;
+}
+
+
+.nav-item a, a.nav-item:hover {
+    color:#333;
+    background:#D3D3D5;
+}
+
+.hero.is-primary.is-bold {
+    background:#D3D3D5;
+}
+
+.hero-body {
+    height:500px;
+}
+
+.button.is-danger.is-outlined {
+    background-color: transparent;
+    border-color: #ED2D26;
+    color: #ED2D26;
+}
+
+.button.is-danger.is-outlined:hover {
+    background-color: #ED2D26;
+}
+
+.section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.footer {
+    background-color: #D3D3D5;
+    padding: 3.5rem 2rem 2rem;
+}
