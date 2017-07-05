@@ -1,6 +1,26 @@
 
 var app = angular.module("ymca", ['ngRoute']); 
 
+app.controller('homeCtrl', function($scope) {
+    // TODO: Write Home Controller
+});
+
+app.controller('venueCtrl', function($scope) {
+    // TODO: Write Venue Controller
+});
+
+app.controller('activitiesCtrl', function($scope) {
+    // TODO: Write Activities Controller
+});
+
+app.controller('volunteerCtrl', function($scope) {
+    // TODO: Write Volunteer Controller
+});
+
+app.controller('donateCtrl', function($scope) {
+    // TODO: Write Donate Controller
+});
+
 app.controller('contactCtrl', function($scope) {
     var map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: 55.845031, lng: -4.426623 },

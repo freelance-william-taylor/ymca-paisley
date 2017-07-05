@@ -45,7 +45,7 @@ module.exports = function (grunt) {
 
         connect: {
             server: {
-                options:{
+                options: {
                     port: 9000,
                     base: 'build'
                 }
@@ -69,12 +69,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    const buildTasks = ['copy', 'uglify', 'cssmin'];
-
-    grunt.registerTask('build',  ['copy', 'uglify', 'cssmin']);
+    grunt.registerTask('build', ['copy', 'uglify', 'cssmin']);
     grunt.registerTask('serve', ['build', 'connect:server:keepalive']);
     grunt.registerTask('dev', ['connect', 'watch']);
-
     grunt.registerTask('default', () => {
         console.log('Choose dev/build/serve grunt task');
     });
