@@ -10,16 +10,14 @@ app.controller('contactCtrl', function($scope) {
 
 app.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
-
-    var homeTemplate = { templateUrl : "html/home.html" };
     $routeProvider
-        .when("/", homeTemplate)
+        .when("/", { templateUrl : "html/home.html" })
         .when("/venue", { templateUrl : "html/venue.html" })
         .when("/activities", { templateUrl : "html/activities.html" })
         .when("/volunteer", { templateUrl : "html/volunteer.html" })
         .when("/donate", { templateUrl : "htclearml/donate.html" })
         .when("/contact", { templateUrl : "html/contact.html", controller: 'contactCtrl' })
-        .otherwise(homeTemplate)
+            .otherwise({redirectTo: '/'})
 });
 
 app.controller("AppController", function($scope) {
