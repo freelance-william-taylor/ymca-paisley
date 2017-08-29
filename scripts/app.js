@@ -1,8 +1,11 @@
 
 var app = angular.module("ymca", ['ngRoute']); 
 
-app.controller('homeCtrl', function($scope) {
-    // TODO: Write Home Controller
+app.controller('homeCtrl', function($scope, $location) {
+    console.log('Controller being created')
+    $scope.goto = function(newLocation) {
+        $location.path(newLocation);
+    }
 });
 
 app.controller('venueCtrl', function($scope) {
@@ -31,7 +34,7 @@ app.controller('contactCtrl', function($scope) {
 app.config(function($routeProvider, $locationProvider) {
     $locationProvider.html5Mode(true);
     $routeProvider
-        .when("/", { templateUrl : "html/home.html" })
+        .when("/", { templateUrl : "html/home.html", controller: 'homeCtrl'  })
         .when("/venue", { templateUrl : "html/venue.html" })
         .when("/activities", { templateUrl : "html/activities.html" })
         .when("/volunteer", { templateUrl : "html/volunteer.html" })

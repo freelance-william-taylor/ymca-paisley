@@ -1,4 +1,6 @@
 
+const rewrite = require( "connect-modrewrite" );
+
 module.exports = function (grunt) {
     grunt.initConfig({
         copy: {
@@ -44,6 +46,15 @@ module.exports = function (grunt) {
         },
 
         connect: {
+            options: {
+                middleware: function ( connect, options, middlewares ) {
+                    var rules = [
+                        "!\\.html|\\.js|\\.css|\\.svg|\\.jp(e?)g|\\.png|\\.gif$ /index.html"
+                    ];
+                    middlewares.unshift( rewrite( rules ) );
+                    return middlewares;
+                },
+            },
             server: {
                 options: {
                     port: 9000,
@@ -54,7 +65,7 @@ module.exports = function (grunt) {
 
         watch: {
             scripts: {
-                files: ['scripts/*.js', 'html/*.html', 'index.html'],
+                files: ['scripts/*.js', 'css/*.css', 'html/*.html', 'index.html'],
                 tasks: ['copy', 'uglify', 'cssmin'],
                 options: {
                     spawn: false

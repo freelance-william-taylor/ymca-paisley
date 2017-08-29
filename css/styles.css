@@ -20,6 +20,11 @@ html, body {
     max-height: 5.0rem;
 }
 
+.nav-toggle {
+    height: 5.0rem;
+    width: 5.0rem;
+}
+
 .nav-item a, a.nav-item {
     color:#333;
 }
@@ -27,11 +32,20 @@ html, body {
 
 .nav-item a, a.nav-item:hover {
     color:#FFF;
-    background:#ED2D26;
+    background:#E0DFDF;
 }
 
 .hero.is-primary.is-bold {
-    background:#D3D3D5;
+    background:url('https://farm1.static.flickr.com/762/32608887233_4a24f60f6a_b.jpg');
+    background-color: rgba(255, 32, 32, 0.43);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.justify {
+    text-align: justify;
 }
 
 .hero-body {
@@ -66,6 +80,11 @@ html, body {
 }
 
 .footer {
-    background-color: #D3D3D5;
+    background: url('http://g1.dcdn.lt/images/pix/peislio-rastas-68299854.jpg');
     padding: 3.5rem 2rem 2rem;
+}
+
+.footer-text {
+    color:white;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.96);
 }
