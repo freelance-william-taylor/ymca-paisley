@@ -1,0 +1,99 @@
+@import "../node_modules/bulma/sass/utilities/initial-variables";
+@import "../node_modules/bulma/sass/utilities/variables";
+
+// Custom variables
+$primary: #fd0506;
+
+@import "../node_modules/bulma/bulma.sass";
+
+#map {
+    height: 600px;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#custom-nav-bar {
+    background: white;
+}
+
+.navbar {
+    height: 5.0rem;
+    box-shadow: 0px 0px 5px #333;
+    z-index:1000;
+}
+
+.nav-item {
+    justify-content: left;
+}
+
+.navbar-link::after {
+    display:none;
+    padding-right: 0;
+}
+
+.navbar-brand {
+    min-height: 5.0rem;
+}
+
+.navbar-item img {
+    max-height: 5.0rem;
+}
+
+.nav-toggle {
+    height: 5.0rem;
+    width: 5.0rem;
+}
+
+.nav-item a, a.nav-item {
+    color:#333;
+}
+
+.navbar-burger {
+    cursor: pointer;
+    display: block;
+    height: 5.0rem;
+    position: relative;
+    width: 5.0rem;
+    margin-left: auto;
+}
+
+.nav-item a, a.nav-item:hover {
+    color:#FFF;
+    background:#F3F3F3;
+}
+
+.hero.is-primary.is-bold {
+    background:url('https://farm1.static.flickr.com/762/32608887233_4a24f60f6a_b.jpg');
+    background-color: rgba(255, 0, 0, 0.30);
+    background-blend-mode: multiply;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.justify {
+    text-align: justify;
+}
+
+.hero-body {
+    height:600px;
+}
+
+.section {
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.footer {
+    background: url('http://g1.dcdn.lt/images/pix/peislio-rastas-68299854.jpg');
+    padding: 3.5rem 2rem 2rem;
+}
+
+.footer-text {
+    color:white;
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.96);
+}

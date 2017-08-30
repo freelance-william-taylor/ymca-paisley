@@ -16,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 var app = angular.module("ymca", ['ngRoute']); 
-
 app.controller('homeCtrl', function($scope, $location) {
     console.log('Controller being created')
     $scope.goto = function(newLocation) {
@@ -52,7 +51,9 @@ app.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when("/", { templateUrl : "html/home.html", controller: 'homeCtrl'  })
         .when("/venue", { templateUrl : "html/venue.html" })
-        .when("/activities", { templateUrl : "html/activities.html" })
+        .when("/ienterprise", { templateUrl : "html/ienterprise.html" })
+        .when("/programmes", { templateUrl : "html/programmes.html" })
+        .when("/youth-clubs", { templateUrl : "html/youth-clubs.html" })
         .when("/volunteer", { templateUrl : "html/volunteer.html" })
         .when("/donate", { templateUrl : "html/donate.html" })
         .when("/contact", { templateUrl : "html/contact.html", controller: 'contactCtrl' })

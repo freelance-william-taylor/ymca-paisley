@@ -37,8 +37,6 @@ module.exports = function (grunt) {
             target: {
                 files: {
                     'build/styles.min.css': [
-                        //'node_modules/font-awesome/css/font-awesome.css',
-                        //'node_modules/bulma/css/bulma.css',
                         'css/*.css'
                     ]
                 }
@@ -54,10 +52,21 @@ module.exports = function (grunt) {
             }
         },
 
+        sass: {                              
+            dist: {                            
+                options: {                       
+                    style: 'expanded'
+                },
+                files: {                         
+                    'css/styles.css': 'sass/styles.scss'
+                }
+            }
+        },
+
         watch: {
             scripts: {
-                files: ['scripts/*.js', 'css/*.css', 'html/*.html', 'index.html'],
-                tasks: ['copy', 'uglify', 'cssmin'],
+                files: ['scripts/*.js', 'sass/*.scss', 'css/*.css', 'html/*.html', 'index.html'],
+                tasks: ['copy', 'uglify', 'sass', 'cssmin'],
                 options: {
                     spawn: false
                 }
@@ -65,13 +74,14 @@ module.exports = function (grunt) {
         }
     });
 
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
 
-    grunt.registerTask('build', ['copy', 'uglify', 'cssmin']);
+    grunt.registerTask('build', ['copy', 'uglify', 'sass', 'cssmin']);
     grunt.registerTask('serve', ['build', 'connect:server:keepalive']);
     grunt.registerTask('dev', ['connect', 'watch']);
     grunt.registerTask('default', () => {
