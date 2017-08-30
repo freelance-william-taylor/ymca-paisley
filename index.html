@@ -2,49 +2,66 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>YMCA Paisley</title>
     <meta name="description" content="We are a youth organisation that aims to respond effectively to the needs of the most vulnerable children, young people and families within Paisley. We develop any activity that support and advances people to reach their potential by overcoming barriers that would normally exclude them, eg age; ill health; disability, financial hardship, racial discrimination and social class.">
     <meta name="author" content="YMCA, William Taylor">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.4.4/css/bulma.min.css">
     <link rel='stylesheet' href='styles.min.css' />
-    <link rel="icon" href="https://image.flaticon.com/icons/svg/27/27825.svg?v=2">
+    <link rel="icon" href="https://image.flaticon.com/icons/svg/27/27825.svg">
 
     <base href="/">
 </head>
 <body ng-app="ymca">
-    <nav class="nav">
-        <div class="nav-left">
-            <a class="nav-item">
-                <img src="images/logo.png">
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <a class="navbar-item"  style='pointer-events:none; padding: 0px;'>
+                <img src="images/logo.png" />
             </a>
+            
+            <div class="navbar-burger is-hidden-desktop" data-target="custom-nav-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
-
-        <span class="nav-toggle">
-            <span></span>
-            <span></span>
-            <span></span>
-        </span>
-
-        <div class="nav-right nav-menu">
-            <a class="nav-item" href='/'>
-                Welcome
-            </a>
-            <a class="nav-item" href='/venue'>
-                Venue Hire
-            </a>
-            <a class="nav-item" href='/activities'>
-                Activities
-            </a>
-            <a class="nav-item" href='/volunteer'>
-                Volunteer
-            </a>
-            <a class="nav-item" href='/donate'>
-                Donate
-            </a>
-            <a class="nav-item" href='/contact'>
-                Contact Us
-            </a>
+   
+        <div id="custom-nav-bar" class="navbar-menu">
+            <div class="navbar-start">      
+                <a class="nav-item" ng-href='/'>
+                    Welcome
+                </a>
+                <a class="nav-item" ng-href='/venue'>
+                    Venue Hire
+                </a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link" style="padding: .5rem .75rem">
+                            Activities
+                        </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item" ng-href='/activities'>
+                                Youth Clubs
+                            </a>
+                            <a class="navbar-item" ng-href='/activities'>
+                                Programmes
+                            </a>
+                            <a class="navbar-item" ng-href='/activities'>
+                                iEnterprise
+                            </a>
+                        </div>
+                    </div>
+                    <a class="nav-item" ng-href='/donate'>
+                        Donate
+                    </a>
+                    <a class="nav-item" ng-href='/contact'>
+                        Contact Us
+                    </a>
+              </div>
+              <div class='navbar-end'>
+              </div>
         </div>
     </nav>
 
