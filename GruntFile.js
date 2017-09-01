@@ -35,7 +35,7 @@ module.exports = function (grunt) {
             target: {
                 files: {
                     'build/styles.min.css': [
-                        'css/*.css'
+                        'build/*.css'
                     ]
                 }
             }
@@ -64,14 +64,14 @@ module.exports = function (grunt) {
                     style: 'expanded'
                 },
                 files: {                         
-                    'css/styles.css': 'sass/styles.scss'
+                    'build/styles.css': 'sass/styles.scss'
                 }
             }
         },
 
         watch: {
             scripts: {
-                files: ['scripts/*.js', 'sass/*.scss', 'css/*.css', 'html/*.html', 'index.html'],
+                files: ['scripts/*.js', 'sass/*.scss', 'html/*.html', 'index.html'],
                 tasks: ['copy', 'uglify', 'sass', 'cssmin'],
                 options: {
                     spawn: false
