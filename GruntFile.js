@@ -1,6 +1,4 @@
 
-const rewrite = require( "connect-modrewrite" );
-
 module.exports = function (grunt) {
     grunt.initConfig({
         copy: {
@@ -47,7 +45,15 @@ module.exports = function (grunt) {
             server: {
                 options: {
                     port: 9000,
-                    base: 'build'
+                    base: 'build',
+                    middleware: function(connect, options, middlewares) {
+                        var modRewrite = require('connect-modrewrite');
+            
+                        // enable Angular's HTML5 mode
+                        middlewares.unshift(modRewrite(['!\\.html|\\.js|\\.svg|\\.jpg|\\.css|\\.png$ /index.html [L]']));
+            
+                        return middlewares;
+                      }
                 }
             }
         },

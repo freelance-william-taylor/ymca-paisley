@@ -4,31 +4,31 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>YMCA Paisley</title>
+    <title>YMCA</title>
     <meta name="description" content="We are a youth organisation that aims to respond effectively to the needs of the most vulnerable children, young people and families within Paisley. We develop any activity that support and advances people to reach their potential by overcoming barriers that would normally exclude them, eg age; ill health; disability, financial hardship, racial discrimination and social class.">
     <meta name="author" content="YMCA, William Taylor">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel='stylesheet' href='styles.min.css' />
-    <link rel="icon" href="https://image.flaticon.com/icons/svg/27/27825.svg">
+    <link rel="icon" href="images/icon.png?v=2">
 
     <base href="/">
 </head>
-<body ng-app="ymca">
+<body ng-app="ymca" ng-controller="navCtrl">
     <nav class="navbar">
         <div class="navbar-brand">
             <a class="navbar-item"  style='pointer-events:none; padding: 0px;'>
                 <img src="images/logo.png" />
             </a>
             
-            <div class="navbar-burger is-hidden-desktop" data-target="custom-nav-bar">
+            <div ng-click='toggle()' ng-class="isActive ? 'is-active' : ''" class="navbar-burger is-hidden-desktop">
                 <span></span>
                 <span></span>
                 <span></span>
             </div>
         </div>
    
-        <div id="custom-nav-bar" class="navbar-menu">
+        <div style='background: white;' ng-class="isActive ? 'is-active' : ''" class="navbar-menu">
             <div class="navbar-start">      
                 <a class="nav-item" ng-href='/'>
                     Welcome
@@ -37,7 +37,7 @@
                     Venue Hire
                 </a>
                 <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" style="padding: .5rem .75rem">
+                        <a class="navbar-link" style="padding: .5rem .75rem;     pointer-events: none;">
                             Activities
                         </a>
                         <div class="navbar-dropdown">
@@ -52,6 +52,9 @@
                             </a>
                         </div>
                     </div>
+                    <a class="nav-item" ng-href='/volunteer'>
+                        Volunteer
+                    </a>
                     <a class="nav-item" ng-href='/donate'>
                         Donate
                     </a>
@@ -64,16 +67,14 @@
         </div>
     </nav>
 
-    <div ng-view></div>
+    <div ng-click='close()' id='ng-view' ng-view></div>
 
     <footer class="footer">
         <div class="container">
-            <div class="content has-text-centered footer-text">
-            <p>
-               Paisley YMCA-39 High Street Paisley PA12AF    01418892876    Scottish Charity Number SCO17206 © Paisley YMCA 2017
-            </p>
-            <p>
-            </p>
+            <div class="content justify has-text-centered footer-text">
+                <p>
+                    Paisley YMCA-39,  High Street Paisley PA12AF, 01418892876, Scottish Charity Number SCO17206 © Paisley YMCA 2017
+                </p>
             </div>
         </div>
     </footer>
