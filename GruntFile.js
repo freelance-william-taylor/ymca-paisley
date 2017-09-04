@@ -7,6 +7,7 @@ module.exports = function (grunt) {
                     { expand: true, flatten: true, dest: 'build/fonts/', src: 'node_modules/font-awesome/fonts/*.*' },
                     { expand: true, dest: 'build/', src: 'images/*.*' },
                     { expand: true, dest: 'build/', src: 'html/*.html' },
+                    { expand: true, dest: 'build/', src: 'video/*.mp4' },
                     { expand: true, dest: 'build/', src: '*.html' }
                 ]
             }
@@ -50,7 +51,7 @@ module.exports = function (grunt) {
                         var modRewrite = require('connect-modrewrite');
             
                         // enable Angular's HTML5 mode
-                        middlewares.unshift(modRewrite(['!\\.html|\\.js|\\.svg|\\.jpg|\\.css|\\.png$ /index.html [L]']));
+                        middlewares.unshift(modRewrite(['!\\.html|\\.mp4|\\.js|\\.svg|\\.jpg|\\.css|\\.png$ /index.html [L]']));
             
                         return middlewares;
                       }

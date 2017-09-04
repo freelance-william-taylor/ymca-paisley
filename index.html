@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>YMCA Paisley</title>
+    <meta name="title" content="Paisley YMCA – Helping the young and vulnerable">
     <meta name="description" content="We are a youth organisation that aims to respond effectively to the needs of the most vulnerable children, young people and families within Paisley. We develop any activity that support and advances people to reach their potential by overcoming barriers that would normally exclude them, eg age; ill health; disability, financial hardship, racial discrimination and social class.">
     <meta name="author" content="YMCA, William Taylor">
 
@@ -12,12 +13,12 @@
     <link rel='stylesheet' href='styles.min.css' />
     <link rel="icon" href="images/icon.png">
 
-    <base href="/">
+    <base href="/"> 
 </head>
 <body ng-app="ymca" ng-controller="navCtrl">
     <nav class="navbar">
         <div class="navbar-brand">
-            <a class="navbar-item"  style='pointer-events:none; padding: 0px;'>
+            <a class="navbar-item is-unselectable is-paddingless">
                 <img src="images/logo.png" />
             </a>
             
@@ -37,7 +38,7 @@
                     Venue Hire
                 </a>
                 <div class="navbar-item has-dropdown is-hoverable">
-                        <a class="navbar-link" style="padding: .5rem .75rem;     pointer-events: none;">
+                        <a class="navbar-link is-unselectable" style="padding: .5rem .75rem;">
                             Activities
                         </a>
                         <div class="navbar-dropdown">
