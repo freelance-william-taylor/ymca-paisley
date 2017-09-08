@@ -1,5 +1,7 @@
 
 module.exports = function (grunt) {
+    let buildSteps = ['copy', 'ts', 'browserify', 'uglify', 'sass', 'cssmin'];
+
     grunt.initConfig({
         copy: {
             main: {
@@ -19,11 +21,7 @@ module.exports = function (grunt) {
             },
             my_target: {
                 files: {
-                    'build/app.min.js': [
-                        'node_modules/angular/angular.js',
-                        'node_modules/angular-route/angular-route.js',
-                        'scripts/*.js'
-                    ]
+                    'build/app.min.js': [ 'build/app.js' ]
                 }
             }
         },
@@ -47,24 +45,22 @@ module.exports = function (grunt) {
                 options: {
                     port: 9000,
                     base: 'build',
-                    middleware: function(connect, options, middlewares) {
+                    middleware: function (connect, options, middlewares) {
                         var modRewrite = require('connect-modrewrite');
-            
-                        // enable Angular's HTML5 mode
                         middlewares.unshift(modRewrite(['!\\.html|\\.mp4|\\.js|\\.svg|\\.jpg|\\.css|\\.png$ /index.html [L]']));
-            
+
                         return middlewares;
-                      }
+                    }
                 }
             }
         },
 
-        sass: {                              
-            dist: {                            
-                options: {                       
+        sass: {
+            dist: {
+                options: {
                     style: 'expanded'
                 },
-                files: {                         
+                files: {
                     'build/styles.css': 'sass/styles.scss'
                 }
             }
@@ -72,13 +68,30 @@ module.exports = function (grunt) {
 
         watch: {
             scripts: {
-                files: ['scripts/*.js', 'sass/*.scss', 'html/*.html', 'index.html'],
-                tasks: ['copy', 'uglify', 'sass', 'cssmin'],
+                files: ['scripts/*.ts', 'sass/*.scss', 'html/*.html', 'index.html'],
+                tasks: buildSteps,
                 options: {
                     spawn: false
                 }
             }
-        }
+        },
+
+        ts: {
+            default: {
+                src: ["scripts/*.ts", "!node_modules/**"],
+                tsconfig: 'tsconfig.json'
+            }
+        },
+
+        browserify: {
+            dist: {
+              files: {
+                'build/app.js': [ 
+                    'scripts/*.js' 
+                ]
+              }
+            }
+          }
     });
 
     grunt.loadNpmTasks('grunt-contrib-sass');
@@ -87,9 +100,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-connect');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-browserify');
+    grunt.loadNpmTasks("grunt-ts");
 
-    grunt.registerTask('build', ['copy', 'uglify', 'sass', 'cssmin']);
-    grunt.registerTask('serve', ['build', 'connect:server:keepalive']);
+    grunt.registerTask('build', buildSteps);
+    grunt.registerTask('serve', ['connect:server:keepalive']);
     grunt.registerTask('dev', ['connect', 'watch']);
     grunt.registerTask('default', () => {
         console.log('Choose dev/build/serve grunt task');

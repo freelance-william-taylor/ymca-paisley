@@ -4,8 +4,12 @@ logs
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+### Custom Dirs
+**/*.js
 build/
 *.DS_Store
+.tscache
 
 ### Sass ###
 .sass-cache/

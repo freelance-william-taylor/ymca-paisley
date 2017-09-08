@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+        "noImplicitAny": false,
+        "removeComments": true,
+        "moduleResolution": "node",
+        "module": "commonjs",
+        "sourceMap": false,
+        "target": "es5",
+        "lib": ["dom", "es2015"]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+}

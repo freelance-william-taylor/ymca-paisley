@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/full-stack-dev/ymca-paisley#readme",
   "dependencies": {
+    "@types/angular": "^1.6.32",
+    "@types/googlemaps": "^3.26.20",
     "angular": "^1.6.5",
     "angular-route": "^1.6.5",
     "bulma": "^0.4.2",
@@ -27,11 +29,14 @@
   "devDependencies": {
     "connect-modrewrite": "^0.10.1",
     "grunt": "^1.0.1",
+    "grunt-browserify": "^5.2.0",
     "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.2.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.0.1",
-    "grunt-contrib-watch": "^1.0.0"
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-ts": "^6.0.0-beta.16",
+    "typescript": "^2.5.2"
   }
 }

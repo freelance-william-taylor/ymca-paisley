@@ -31,10 +31,10 @@
    
         <div style='background: white;' ng-class="isActive ? 'is-active' : ''" class="navbar-menu">
             <div class="navbar-start">      
-                <a class="nav-item" ng-href='/'>
+                <a class="nav-item" ng-click='open("/")'>
                     Welcome
                 </a>
-                <a class="nav-item" ng-href='/venue'>
+                <a class="nav-item" ng-click='open("/venue")'>
                     Venue Hire
                 </a>
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -42,24 +42,24 @@
                             Activities
                         </a>
                         <div class="navbar-dropdown">
-                            <a class="navbar-item" ng-href='/youth-clubs'>
+                            <a ng-click='open("/youth-clubs")' class="navbar-item">
                                 Youth Clubs
                             </a>
-                            <a class="navbar-item" ng-href='/programmes'>
+                            <a ng-click='open("/programmes")' class="navbar-item">
                                 Programmes
                             </a>
-                            <a class="navbar-item" ng-href='/ienterprise'>
+                            <a ng-click='open("/ienterprise")' class="navbar-item">
                                 iEnterprise
                             </a>
                         </div>
                     </div>
-                    <a class="nav-item" ng-href='/volunteer'>
+                    <a class="nav-item" ng-click='open("/volunteer")'>
                         Volunteer
                     </a>
-                    <a class="nav-item" ng-href='/donate'>
+                    <a class="nav-item" ng-click='open("/donate")'>
                         Donate
                     </a>
-                    <a class="nav-item" ng-href='/contact'>
+                    <a class="nav-item" ng-click='open("/contact")'>
                         Contact Us
                     </a>
               </div>
