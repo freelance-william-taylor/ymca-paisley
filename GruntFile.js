@@ -68,7 +68,7 @@ module.exports = function (grunt) {
 
         watch: {
             scripts: {
-                files: ['scripts/*.ts', 'sass/*.scss', 'html/*.html', 'index.html'],
+                files: ['ts/*.ts', 'sass/*.scss', 'html/*.html', 'index.html'],
                 tasks: buildSteps,
                 options: {
                     spawn: false
@@ -78,7 +78,7 @@ module.exports = function (grunt) {
 
         ts: {
             default: {
-                src: ["scripts/*.ts", "!node_modules/**"],
+                src: ["ts/*.ts", "!node_modules/**"],
                 tsconfig: 'tsconfig.json'
             }
         },
@@ -87,7 +87,7 @@ module.exports = function (grunt) {
             dist: {
               files: {
                 'build/app.js': [ 
-                    'scripts/*.js' 
+                    'ts/*.js' 
                 ]
               }
             }

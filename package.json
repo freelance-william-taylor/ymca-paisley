@@ -1,7 +1,7 @@
 {
   "name": "ymca-paisley",
   "version": "1.0.0",
-  "description": "Professional website for the Paisley YMCA organisation.",
+  "description": "Paisley YMCA website.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0"
@@ -21,10 +21,7 @@
     "@types/googlemaps": "^3.26.20",
     "angular": "^1.6.5",
     "angular-route": "^1.6.5",
-    "bulma": "^0.4.2",
-    "connect-modrewrite": "^0.10.1",
-    "font-awesome": "^4.7.0",
-    "lite-server": "^2.3.0"
+    "bulma": "^0.4.2"
   },
   "devDependencies": {
     "connect-modrewrite": "^0.10.1",
