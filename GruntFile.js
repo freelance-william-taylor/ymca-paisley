@@ -6,7 +6,6 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    { expand: true, flatten: true, dest: 'build/fonts/', src: 'node_modules/font-awesome/fonts/*.*' },
                     { expand: true, dest: 'build/', src: 'images/*.*' },
                     { expand: true, dest: 'build/', src: 'html/*.html' },
                     { expand: true, dest: 'build/', src: 'video/*.mp4' },
@@ -67,12 +66,20 @@ module.exports = function (grunt) {
         },
 
         watch: {
+            css: {
+                files: ['sass/*.scss'],
+                tasks: ['sass', 'cssmin'],
+                options: { spawn: false }
+            },
+            html: {
+                files: ['index.html', 'html/*.html'],
+                tasks: ['copy'],
+                options: { spawn: false }
+            },
             scripts: {
-                files: ['ts/**/*.ts', 'sass/*.scss', 'html/*.html', 'index.html'],
-                tasks: buildSteps,
-                options: {
-                    spawn: false
-                }
+                files: ['ts/**/*.ts'],
+                tasks: ['ts', 'browserify', 'uglify'],
+                options: { spawn: false }
             }
         },
 
@@ -86,8 +93,8 @@ module.exports = function (grunt) {
         browserify: {
             dist: {
               files: {
-                'build/app.js': [ 
-                    'ts/*.js' 
+                'build/app.js': [
+                    'ts/*.js'
                 ]
               }
             }

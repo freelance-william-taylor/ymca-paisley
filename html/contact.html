@@ -2,7 +2,7 @@
   <h1 class="title is-2 is-spaced">Contact Us</h1>
   <div class='columns'>
     <div class='column'>
-      <p>
+      <p class='justify'>
         We are a youth organisation that aims to respond effectively to the needs of the most vulnerable children, young people and
         families within Paisley. You can contact Darren directly or use the below form. You can find us in the centre of
         Paisley a few minutes from the centre of town or Paisley Gilmour Street Station.
@@ -30,7 +30,7 @@
 
 </section>
 
-<div ng-init='contactCtrl.setupMap()' id="map"></div>
+<div ng-init='setupMap()' id="map"></div>
 
 <section class='container section'>
   <div class='column'>
@@ -38,14 +38,14 @@
       <div class="field">
         <label class="label">Name</label>
         <p class="control">
-          <input class="input" type="text" placeholder="Your name">
+          <input ng-model='name' class="input" type="text" placeholder="Your name">
         </p>
       </div>
 
       <div class="field">
         <label class="label">Email</label>
         <p class="control has-icons-left has-icons-right">
-          <input class="input" type="text" placeholder="Your email">
+          <input ng-model='email' class="input" type="text" placeholder="Your email">
           <span class="icon is-small is-left">
             <i class="fa fa-envelope"></i>
           </span>
@@ -56,12 +56,7 @@
         <label class="label">Subject</label>
         <p class="control is-expanded">
           <span class="select is-fullwidth">
-            <select>
-              <option>Activities</option>
-              <option>Volunteering</option>
-              <option>Questions</option>
-              <option>Help</option>
-            </select>
+            <select ng-model='subject' ng-options='sub for sub in subjects'></select>
           </span>
         </p>
       </div>
@@ -69,13 +64,13 @@
       <div class="field">
         <label class="label">Message</label>
         <p class="control">
-          <textarea class="textarea" placeholder="Your message"></textarea>
+          <textarea ng-model='message' class="textarea" placeholder="Your message"></textarea>
         </p>
       </div>
 
       <div class="field">
         <p class="control has-text-centered">
-          <button class="button is-primary">Submit</button>
+          <button ng-click="submit()" class="button is-primary">Submit</button>
         </p>
       </div>
     </div>

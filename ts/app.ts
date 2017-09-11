@@ -1,7 +1,7 @@
 
 import { bootstrapControllers } from './controllers/controllers';
 import { bootstrapServices } from './services/services';
-import { routeTable } from './model/model';
+import { routeTable } from './model/consts';
 import * as angular from 'angular';
 import 'angular-route'; 
 
@@ -14,5 +14,5 @@ app.config(function ($routeProvider, $locationProvider) {
     $routeProvider.otherwise('/');
 });
 
-bootstrapControllers(app); 
 bootstrapServices(app);
+bootstrapControllers(app); 
