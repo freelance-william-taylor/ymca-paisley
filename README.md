@@ -9,9 +9,11 @@ The YMCA Paisley website is a port of the original wordpress website that is set
 
 ## Technologies
 
-* Angular
+* AngularJS
+* Typescript
 * Bulma
 * Grunt
+* Sass
 
 ## License
 

@@ -4,7 +4,8 @@
   "description": "Paisley YMCA website.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 0"
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "dev": "lite-server & grunt dev"
   },
   "repository": {
     "type": "git",
@@ -27,13 +28,13 @@
     "connect-modrewrite": "^0.10.1",
     "grunt": "^1.0.1",
     "grunt-browserify": "^5.2.0",
-    "grunt-contrib-connect": "^1.0.2",
     "grunt-contrib-copy": "^1.0.0",
     "grunt-contrib-cssmin": "^2.2.0",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-ts": "^6.0.0-beta.16",
+    "lite-server": "^2.3.0",
     "typescript": "^2.5.2"
   }
 }
